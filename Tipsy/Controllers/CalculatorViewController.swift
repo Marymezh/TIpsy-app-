@@ -22,8 +22,6 @@ class CalculatorViewController: UIViewController {
     
     var numberOfPersons = 2
     var tip = 0.1
-    var billTotal = 0.0
-    
     var calculation = 0.0
     
     
@@ -56,10 +54,7 @@ class CalculatorViewController: UIViewController {
         }
    
         guard let bill = Double(billTextField.text ?? "1") else {return}
-        billTotal = bill
-        calculation = (billTotal + (billTotal * tip)) / Double(numberOfPersons)
-     
-        
+        calculation = (bill + (bill * tip)) / Double(numberOfPersons)
         
         self.performSegue(withIdentifier: "goToResult", sender: self)
 
